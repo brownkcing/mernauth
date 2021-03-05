@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
+import styled from 'styled-components';
+import GlobalStyles from './styles/GlobalStyles';
+import * as Mixins from './styles/Mixins';
+import Forms from './home/Form';
 import './App.css';
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 55vh;
+`;
+
+const Container = styled.div`
+  ${Mixins.container}
+  
+`;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyles />
+      <Wrapper>
+        <Container>
+            <Forms />
+        </Container>
+      </Wrapper>
     </div>
   );
 }
