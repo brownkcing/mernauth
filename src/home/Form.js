@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import * as Mixins from '../styles/Mixins';
-import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './Login';
 import Tabs from './Tabs';
+import User from './User';
+
+import AuthService from '../services/auth.service';
+
+
 
 const FormWrapper = styled.div`
     display: flex;
@@ -19,57 +24,35 @@ const FormWrapper = styled.div`
     border-radius: 1.5em;
 `;
 
-const FormContainer = styled.form`
+const FormContainer = styled.div`
     ${Mixins.container}
     width: 100%;
     height: 100%;
 `;
 
-const Button = styled.button`
-    margin: 0.5em;
-    padding: 0.7em 7em;
-    display: inline-block;
-    background-color: #3F98FF;
-    border-color: #3F98FF;
-    font-size: 1rem;
-    font-weight: 400;
-    cursor: pointer;
-    line-height: 1.5;
-    border-radius: .25rem;
-    border: none;
-    &:focus {
-        color: white;
-        outline-color: #3F98FF;
-`;
-
-const Forgot = styled.div`
-    margin-bottom: 4em;
-    a {
-        text-decoration: none;
-        color: #3F98FF;
-        :hover {
-            color: #90C4FF;
+const RegForms = () => {
+    const [currentUser, setCurrentUser] = useState(undefined);
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+        if (user) {
+          setCurrentUser(user);
         }
-    }
-`;
-
-export default function Forms() {
+      }, []);
+    
     return (
-        <Router>
-            <FormWrapper>
-                <Tabs />
-                <FormContainer>
-                    <Switch>
-                        <Route path="/SignUp" component={SignUp}  />
-                        <Route exact path="/" component={SignUp}>
-                            <Redirect to="/SignUp"/>
-                        </Route>
-                        <Route path="/Login" component={Login}  />
-                    </Switch>
-                    <Button>Submit</Button>
-                    <Forgot>Forgot <a href="#">Password?</a></Forgot>
-                </FormContainer>
-            </FormWrapper>
-        </Router>
+        <FormWrapper>
+            <Tabs />
+            <FormContainer>
+                <Switch>
+                    <Route exact path="/signup" component={SignUp}/>
+                    <Route exact path="/" component={SignUp}>
+                        <Redirect to="/signup"/>
+                    </Route>
+                    <Route path="/login" component={Login}  />
+                </Switch>
+            </FormContainer>
+        </FormWrapper>
     )
 }
+
+export default RegForms;

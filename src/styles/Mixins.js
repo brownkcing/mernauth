@@ -29,3 +29,20 @@ export const container = css`
 export const row = css`
     display: flex;
 `;
+
+export const button = css`
+    margin: 0.5em;
+    padding: 0.7em 7em;
+    display: inline-block;
+    background-color: #3F98FF;
+    border-color: #3F98FF;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    line-height: 1.5;
+    border-radius: .25rem;
+    border: none;
+    &:focus {
+        color: white;
+        outline-color: #3F98FF;
+`;

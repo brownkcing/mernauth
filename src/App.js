@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import * as Mixins from './styles/Mixins';
 import Forms from './home/Form';
+import User from './home/User';
+
 import './App.css';
+import { Switch, Route } from 'react-router';
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,9 +25,12 @@ function App() {
     <div className="App">
       <GlobalStyles />
       <Wrapper>
-        <Container>
+        <Container>  
+          <Switch>
+            <Route exact path="/user" component={User} />
             <Forms />
-        </Container>
+          </Switch>
+        </Container>    
       </Wrapper>
     </div>
   );

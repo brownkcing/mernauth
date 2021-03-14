@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
@@ -36,8 +36,8 @@ const Linker = styled(NavLink)`
 export default function Tabs() {
     return (
         <ListTabs>
-            <NavTabs><Linker activeStyle={{boxShadow: "none", backgroundColor:"white"}} to="/SignUp" >Sign-Up</Linker></NavTabs>
-            <NavTabs><Linker activeStyle={{boxShadow: "none", backgroundColor:"white"}} to='/Login'>Login</Linker></NavTabs>
+            <NavTabs><Linker activeStyle={{boxShadow: "none", backgroundColor:"white"}} to="/signup" >Sign-Up</Linker></NavTabs>
+            <NavTabs><Linker activeStyle={{boxShadow: "none", backgroundColor:"white"}} to='/login'>Login</Linker></NavTabs>
         </ListTabs>            
     )
 }
