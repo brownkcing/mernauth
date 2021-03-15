@@ -40,15 +40,11 @@ require("./server/routes/auth.routes")(app);
 require("./server/routes/user.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
-var server = app.listen(PORT, function() {
-  var host = server.address().address;
-  var port = server.address().port;
-  console.log("server is listening at http://%s:%s", host, port);
-});
+
 
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
