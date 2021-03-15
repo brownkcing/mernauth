@@ -31,7 +31,6 @@
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "proxy": "http://localhost:8080",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -51,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^6.0.0"
+    "concurrently": "^6.0.0",
+    "netlify-lambda": "^2.0.3"
   }
 }
