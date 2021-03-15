@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 const db = require("./server/models");
 const Role = db.role;
 const path = `mongodb+srv://${process.env.ATLAS_URI_USER}:${process.env.ATLAS_URI_PASS}@cluster0.lnnw8.mongodb.net/test?retryWrites=true&w=majority`
+const uri = process.env.MONGODB_URI
 
 db.mongoose
 .connect(path, {
