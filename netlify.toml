@@ -1,7 +1,2 @@
 [build]
   functions = "built-lambda"
-
-
-[dev]
-port =  8080
-publish = "build"
