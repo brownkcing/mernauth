@@ -18,7 +18,7 @@ const path = `mongodb+srv://${process.env.ATLAS_URI_USER}:${process.env.ATLAS_UR
 const uri = process.env.MONGODB_URI
 
 db.mongoose
-.connect(path, uri, {
+.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
   })
