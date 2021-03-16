@@ -33,10 +33,10 @@ db.mongoose
     process.exit();
   });
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "test" });
-});
+  app.get('/', (req, res) => {
+    res.status(200).json({api: 'version 1'})
+  })
+  
 
 // routes
 require("./server/routes/auth.routes")(app);
