@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const app = express();
+const path = require('path')
 
 
 app.use(cors());
@@ -12,13 +13,18 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static(path.join(__dirname, './build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './build'))
+})
+
 const db = require("./server/models");
 const Role = db.role;
-const path = `mongodb+srv://${process.env.ATLAS_URI_USER}:${process.env.ATLAS_URI_PASS}@cluster0.lnnw8.mongodb.net/test?retryWrites=true&w=majority`
-const uri = process.env.MONGODB_URI
+const urlm = `mongodb+srv://${process.env.ATLAS_URI_USER}:${process.env.ATLAS_URI_PASS}@cluster0.lnnw8.mongodb.net/test?retryWrites=true&w=majority`
+const mongodburi = process.env.MONGODB_URI
 
 db.mongoose
-.connect(uri, {
+.connect(urlm, {
   useNewUrlParser: true,
   useUnifiedTopology: true
   })
