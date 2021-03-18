@@ -17,10 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 const db = require("./server/models");
 const Role = db.role;
 const urlm = `mongodb+srv://${process.env.ATLAS_URI_USER}:${process.env.ATLAS_URI_PASS}@cluster0.lnnw8.mongodb.net/test?retryWrites=true&w=majority`
-const mongodburi = process.env.MONGODB_URI
+const mongodburi = `mongodb+srv://cyrilmarcus:dbpasswordcavemansp@cluster0.lnnw8.mongodb.net/test?retryWrites=true&w=majority`
 
 db.mongoose
-.connect(urlm, {
+.connect(mongodburi, {
   useNewUrlParser: true,
   useUnifiedTopology: true
   })
@@ -39,8 +39,7 @@ db.mongoose
   
 
 // routes
-require("./server/routes/auth.routes")(app);
-require("./server/routes/user.routes")(app);
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
