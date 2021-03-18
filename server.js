@@ -33,7 +33,7 @@ db.mongoose
     process.exit();
   });
 
-  app.get('/', (req, res) => {
+  app.get('/test1', (req, res) => {
     res.status(200).json({api: 'version 1'})
   })
   
