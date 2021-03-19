@@ -43,7 +43,7 @@ const LoginTitle = styled.h1`
     align-self:center;
 `;
 
-const User = () => {
+const Profile = () => {
         const userLogged = AuthService.getCurrentUser();
         const logOut = () => {
             AuthService.logout();
@@ -60,4 +60,4 @@ const User = () => {
         </UserWrap>
     )
 }
-export default User;
+export default Profile;

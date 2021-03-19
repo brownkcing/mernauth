@@ -5,7 +5,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './Login';
 import Tabs from './Tabs';
-import User from './User';
+import Profile from './Profile';
 
 import AuthService from '../services/auth.service';
 
@@ -49,7 +49,7 @@ const RegForms = () => {
                         <Redirect to="/signup"/>
                     </Route>
                     <Route path="/login" component={Login}  />
-                    <Route exact path="/user" component={User} />
+                    <Route exact path="/profile" component={Profile} />
                 </Switch>
             </FormContainer>
         </FormWrapper>
