@@ -5,7 +5,8 @@ const app = express();
 
 
 const corsOptions = {
-  origin: "https://mernauthfrontend.netlify.app/"
+  "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
+  "Access-Control-Allow-Origin": "*",
 }
 app.use(cors(corsOptions, {credentials: true, origin: true}));
 
