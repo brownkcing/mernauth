@@ -4,7 +4,8 @@ require("dotenv").config();
 const app = express();
 
 
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
+app.options("*", cors({credentials: true, origin: true}));
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -38,8 +39,7 @@ db.mongoose
   
 
 // routes
-require("./server/routes/auth.routes")(app);
-require("./server/routes/user.routes")(app);
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
