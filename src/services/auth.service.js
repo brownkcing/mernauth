@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://mernauthbackend.herokuapp.com/";
+const API_URL = "https://mernauthbackend.herokuapp.com/auth/";
 
 const register = (username, email, password) => {
   return axios.post(API_URL + "signup", {

@@ -4,8 +4,10 @@ require("dotenv").config();
 const app = express();
 
 
-app.use(cors({credentials: true, origin: true}));
-app.options("*", cors({credentials: true, origin: true}));
+const corsOptions = {
+  origin: "https://mernauthfrontend.netlify.app/"
+}
+app.use(cors(corsOptions, {credentials: true, origin: true}));
 
 // parse requests of content-type - application/json
 app.use(express.json());
