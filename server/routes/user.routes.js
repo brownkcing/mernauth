@@ -10,19 +10,7 @@ module.exports = function(app) {
     next();
   });
 
-  app.get("/all", controller.allAccess);
-
-  app.get("/user", [authJwt.verifyToken], controller.userBoard);
-
-  app.get(
-    "/mod",
-    [authJwt.verifyToken, authJwt.isModerator],
-    controller.moderatorBoard
-  );
-
-  app.get(
-    "/api/test/admin",
-    [authJwt.verifyToken, authJwt.isAdmin],
-    controller.adminBoard
-  );
-};
+  app.get('/all', (req, res) => {
+    res.status(200).json({ message: 'Connected!' });
+  });
+}
