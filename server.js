@@ -34,7 +34,7 @@ db.mongoose
   });
 
   // require("./server/routes/auth.routes.js")(app);
-  require("./server/routes/user.routes.js")(app);
+  // require("./server/routes/user.routes.js")(app);
   require("./server/routes/testRoutes.js")(app);
 
 
