@@ -1,5 +1,14 @@
 
+
 module.exports = function(app) {
+  app.use(function(req, res, next) {
+    res.set({
+      "Access-Control-Allow-Headers":
+      "x-access-token, Origin, Content-Type, Accept",
+      "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE"
+    })
+    next();
+  });
 
   app.get('/all', (req, res) => {
     res.status(200).json({ message: 'Connected!' });
