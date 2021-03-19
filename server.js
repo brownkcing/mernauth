@@ -35,7 +35,7 @@ db.mongoose
 
   // require("./server/routes/auth.routes")(app);
   // require("./server/routes/user.routes")(app);
-  require("./server/routes/testRoutes.js")(app);
+  // require("./server/routes/testRoutes.js")(app);
 
 
   app.get('/test1', (req, res) => {

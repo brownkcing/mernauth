@@ -4,7 +4,7 @@ const routes = require('express').Router();
 
 
 module.exports = function(app) {
-    routes.get('api/test/test2', (req, res) => {
+    app.get('api/test/test2', (req, res) => {
         res.status(200).json({ message: 'Connected!' });
       });
 }
