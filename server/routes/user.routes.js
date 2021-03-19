@@ -8,7 +8,6 @@ module.exports = function(app) {
       "x-access-token, Origin, Content-Type, Accept",
       "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE"
     })
-    next();
   });
 
   app.get('/all', (req, res) => {
