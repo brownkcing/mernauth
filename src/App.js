@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import * as Mixins from './styles/Mixins';
 import Forms from './home/Form';
-import User from './home/User';
+
 
 import './App.css';
-import { Switch, Route } from 'react-router';
+import { Switch } from 'react-router';
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,21 +16,21 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  ${Mixins.container}
-  
+  ${Mixins.container} 
 `;
 
 function App() {
   return (
     <div className="App">
-      <GlobalStyles />
-      <Wrapper>
-        <Container>  
-          <Switch>
+    
+      <GlobalStyles />  
+      <Switch>
+        <Wrapper>
+          <Container>  
             <Forms />
-          </Switch>
-        </Container>    
-      </Wrapper>
+          </Container>    
+        </Wrapper>
+      </Switch>
     </div>
   );
 }
