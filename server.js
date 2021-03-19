@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 const db = require("./server/models");
 const Role = db.role;
 const urlm = `mongodb+srv://${process.env.ATLAS_URI_USER}:${process.env.ATLAS_URI_PASS}@cluster0.lnnw8.mongodb.net/test?retryWrites=true&w=majority`
-const mongodburi = `mongodb+srv://cyrilmarcus:dbpasswordcavemansp@cluster0.lnnw8.mongodb.net/test?retryWrites=true&w=majority`
+const mongodburi = process.env.MONGODB_URI
 
 db.mongoose
 .connect(mongodburi, {
@@ -32,15 +32,9 @@ db.mongoose
     console.error("Connection error", err);
     process.exit();
   });
-  // require("./server/routes/testRoutes.js")(app);
-  // require("./server/routes/auth.routes.js")(app);
+
+  require("./server/routes/auth.routes.js")(app);
   require("./server/routes/user.routes.js")(app);
-
-
-
-  app.get('/test1', (req, res) => {
-    res.status(200).json({api: 'version 1'})
-  })
 
 
 // set port, listen for requests
