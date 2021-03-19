@@ -8,7 +8,7 @@ const corsOptions = {
   "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
   "Access-Control-Allow-Origin": "*",
 }
-app.use(cors(corsOptions, {credentials: true, origin: true}));
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
