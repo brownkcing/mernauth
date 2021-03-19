@@ -32,10 +32,10 @@ db.mongoose
     console.error("Connection error", err);
     process.exit();
   });
-
-  // require("./server/routes/auth.routes.js")(app);
-  // require("./server/routes/user.routes.js")(app);
   require("./server/routes/testRoutes.js")(app);
+  // require("./server/routes/auth.routes.js")(app);
+  require("./server/routes/user.routes.js")(app);
+
 
 
   app.get('/test1', (req, res) => {
