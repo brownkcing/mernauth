@@ -33,12 +33,14 @@ db.mongoose
     process.exit();
   });
 
+  // require("./server/routes/auth.routes")(app);
+  // require("./server/routes/user.routes")(app);
+  require("./server/routes/testRoutes")(app);
+
+
   app.get('/test1', (req, res) => {
     res.status(200).json({api: 'version 1'})
   })
-  
-
-// routes
 
 
 // set port, listen for requests
