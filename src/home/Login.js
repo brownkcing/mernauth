@@ -1,7 +1,6 @@
 import React, {useState, useRef} from 'react';
 import styled from 'styled-components';
 import * as Mixins from '../styles/Mixins';
-import {Link} from 'react-router-dom';
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
 import CheckButton from 'react-validation/build/button';
@@ -79,7 +78,7 @@ const Login = (props) => {
         if (checkBtn.current.context._errors.length === 0) {
           AuthService.login(username, password).then(
             () => {
-              props.history.push("/User");
+              props.history.push("/user");
               window.location.reload();
             },
             (error) => {
