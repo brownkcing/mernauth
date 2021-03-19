@@ -24,13 +24,11 @@ function App() {
     <div className="App">
     
       <GlobalStyles />  
-      <Switch>
         <Wrapper>
           <Container>  
             <RegForms />
           </Container>    
         </Wrapper>
-      </Switch>
     </div>
   );
 }
