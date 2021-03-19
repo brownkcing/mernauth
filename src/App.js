@@ -27,7 +27,6 @@ function App() {
       <Wrapper>
         <Container>  
           <Switch>
-            <Route exact path="/user" component={User} />
             <Forms />
           </Switch>
         </Container>    
