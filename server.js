@@ -33,8 +33,8 @@ db.mongoose
     process.exit();
   });
 
-  // require("./server/routes/auth.routes")(app);
-  // require("./server/routes/user.routes")(app);
+  require("./server/routes/auth.routes.js")(app);
+  require("./server/routes/user.routes.js")(app);
   require("./server/routes/testRoutes.js")(app);
 
 
