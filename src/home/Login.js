@@ -78,7 +78,7 @@ const Login = (props) => {
         if (checkBtn.current.context._errors.length === 0) {
           AuthService.login(username, password).then(
             () => {
-              props.history.push("/user");
+              props.history.push("user");
               window.location.reload();
             },
             (error) => {
