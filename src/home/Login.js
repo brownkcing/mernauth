@@ -128,7 +128,7 @@ const Login = (props) => {
                 </LoginInput>       
                 <Button ref={checkBtn} disabled={loading} style={{color:'black'}}>{loading}Submit</Button>
                 <div style={{color:'red'}}>{message}</div>
-                <Forgot>Forgot <a href="#">Password?</a></Forgot>
+                <Forgot>Forgot <a>Password?</a></Forgot>
             </LoginForm>
         </LoginWrap>
     )

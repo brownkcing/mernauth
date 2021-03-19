@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import * as Mixins from './styles/Mixins';
-import Forms from './home/Form';
+import RegForms from './home/Form';
 
 
 import './App.css';
@@ -27,7 +27,7 @@ function App() {
       <Switch>
         <Wrapper>
           <Container>  
-            <Forms />
+            <RegForms />
           </Container>    
         </Wrapper>
       </Switch>
