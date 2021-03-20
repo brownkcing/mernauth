@@ -2,11 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import * as Mixins from './styles/Mixins';
-import RegForms from './home/Form';
-
-
+import RegForms from './home/RegForm';
 import './App.css';
-import { Switch } from 'react-router';
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,7 +19,6 @@ const Container = styled.div`
 function App() {
   return (
     <div className="App">
-    
       <GlobalStyles />  
         <Wrapper>
           <Container>  

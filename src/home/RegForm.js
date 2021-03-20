@@ -42,18 +42,16 @@ const RegForms = () => {
     return (
         <FormWrapper>
             <Tabs />
-            <Switch>
-            <FormContainer>
-               
-                    <Route exact path={"/signup"} component={SignUp}/>
-                    <Route exact path="/" component={SignUp}>
-                        <Redirect to="/signup"/>
-                    </Route>
-                    <Route exact path="/login" component={Login}  />
-                    <Route exact path="/profile" component={Profile} />
-         
+
+            <FormContainer>          
+                <Route exact path={"/signup"} component={SignUp}/>
+                <Route exact path="/" component={SignUp}>
+                    <Redirect to="/signup"/>
+                </Route>
+                <Route exact path="/login" component={Login}  />
+                <Route exact path="/profile" component={Profile} />
             </FormContainer>
-            </Switch>
+
         </FormWrapper>
     )
 }
