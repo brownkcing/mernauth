@@ -4,7 +4,7 @@ import * as Mixins from '../styles/Mixins';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './Login';
-import Tabs from './Tabs';
+// import Tabs from './Tabs';
 import Profile from './Profile';
 
 import AuthService from '../services/auth.service';
@@ -41,8 +41,8 @@ const RegForms = () => {
     
     return (
         <FormWrapper>
-            <Tabs />
-
+            {/* <Tabs /> */}
+            <Switch>
             <FormContainer>          
                 <Route exact path={"/signup"} component={SignUp}/>
                 <Route exact path="/" component={SignUp}>
@@ -51,7 +51,7 @@ const RegForms = () => {
                 <Route exact path="/login" component={Login}  />
                 <Route exact path="/profile" component={Profile} />
             </FormContainer>
-
+            </Switch>
         </FormWrapper>
     )
 }
