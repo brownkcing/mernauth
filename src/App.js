@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import * as Mixins from './styles/Mixins';
 import RegForms from './home/RegForm';
+import Profile from './home/Profile';
 import './App.css';
 
 const Wrapper = styled.div`
@@ -23,6 +24,7 @@ function App() {
         <Wrapper>
           <Container>  
             <RegForms />
+            <Route exact path="/profile" component={Profile} />
           </Container>    
         </Wrapper>
     </div>
