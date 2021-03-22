@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import * as Mixins from '../styles/Mixins';
 import AuthService from '../services/auth.service';
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0, getAccessTokenSilently, setUserMetadata, userMetadata } from "@auth0/auth0-react";
 
 const UserWrap = styled.div`
     display:flex;
@@ -56,7 +56,7 @@ const Profile = () => {
           };     
     if (isLoading) {
         return <div>Loading ...</div>;
-      }
+      };
 
       useEffect(() => {
         const getUserMetadata = async () => {
