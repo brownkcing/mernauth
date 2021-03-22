@@ -4,7 +4,7 @@ import GlobalStyles from './styles/GlobalStyles';
 import * as Mixins from './styles/Mixins';
 import RegForms from './home/RegForm';
 import Profile from './home/Profile';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import './App.css';
 
 const Wrapper = styled.div`
@@ -24,8 +24,10 @@ function App() {
       <GlobalStyles />  
         <Wrapper>
           <Container>  
-            <Route exact path="/profile" component={Profile} />
-            <RegForms />
+            <Switch>
+              <Route exact path="/profile" component={Profile} />
+              <RegForms />
+            </Switch>
           </Container>    
         </Wrapper>
     </div>
