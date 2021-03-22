@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import * as Mixins from '../styles/Mixins';
 import AuthService from '../services/auth.service';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const UserWrap = styled.div`
     display:flex;
@@ -43,17 +44,21 @@ const LoginTitle = styled.h1`
     align-self:center;
 `;
 
+
+
 const Profile = () => {
+        const { user } = useAuth0();
+        const { name, picture, email } = user;
         const userLogged = AuthService.getCurrentUser();
         const logOut = () => {
             AuthService.logout();
           };
     return (
         <UserWrap>
-            <LoginTitle>Welcome {userLogged.username}</LoginTitle>
+            <LoginTitle>Welcome {userLogged.username || name}</LoginTitle>
             <UserPage>
                 <UserContent>
-                   <UserLabel><label>This is {userLogged.username} authenticated personal page.</label></UserLabel> 
+                   <UserLabel><label>This is {userLogged.username || name} authenticated personal page.</label></UserLabel> 
                    <UserLabel><span>Click to</span> <a href="/login" onClick={logOut}>logout</a> <span>and return back to previous page</span></UserLabel>  
                 </UserContent>
             </UserPage>
