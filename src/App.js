@@ -24,8 +24,8 @@ function App() {
       <GlobalStyles />  
         <Wrapper>
           <Container>  
-            <RegForms />
             <Route exact path="/profile" component={Profile} />
+            <RegForms />
           </Container>    
         </Wrapper>
     </div>
