@@ -23,7 +23,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
       domain={domain}
       clientId={clientId}
       onRedirectCallback={onRedirectCallback}
-      redirectUri={Profile}
+      redirectUri="https://mernauthfrontend.netlify.app/profile"
       audience={audience}
     >
       {children}
