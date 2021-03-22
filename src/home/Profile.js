@@ -54,12 +54,7 @@ const Profile = () => {
         const logOut = () => {
             AuthService.logout();
           };     
-    if (isLoading) {
-        return <div>Loading ...</div>;
-      }
-      else {
-          
-      } 
+   
 
       useEffect(() => {
         const getUserMetadata = async () => {
