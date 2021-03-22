@@ -47,22 +47,63 @@ const LoginTitle = styled.h1`
 
 
 const Profile = () => {
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
         const { user } = useAuth0();
         const { name, picture, email } = user;
         const userLogged = AuthService.getCurrentUser();
         const logOut = () => {
             AuthService.logout();
-          };
+          };     
+    if (isLoading) {
+        return <div>Loading ...</div>;
+      }
+
+      useEffect(() => {
+        const getUserMetadata = async () => {
+          const domain = "dev-1ylkmsz0.us.auth0.com";
+      
+          try {
+            const accessToken = await getAccessTokenSilently({
+              audience: `https://${domain}/api/v2/`,
+              scope: "read:current_user",
+            });
+      
+            const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`;
+      
+            const metadataResponse = await fetch(userDetailsByIdUrl, {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            });
+      
+            const { user_metadata } = await metadataResponse.json();
+      
+            setUserMetadata(user_metadata);
+          } catch (e) {
+            console.log(e.message);
+          }
+        };
+      
+        getUserMetadata();
+      }, []);
     return (
+        isAuthenticated && (
         <UserWrap>
             <LoginTitle>Welcome {userLogged.username || name}</LoginTitle>
             <UserPage>
                 <UserContent>
                    <UserLabel><label>This is {userLogged.username || name} authenticated personal page.</label></UserLabel> 
                    <UserLabel><span>Click to</span> <a href="/login" onClick={logOut}>logout</a> <span>and return back to previous page</span></UserLabel>  
+                  <div>{userMetadata ? (
+          <pre>{JSON.stringify(userMetadata, null, 2)}</pre>
+        ) : (
+          "No user metadata defined"
+        )}</div> 
                 </UserContent>
             </UserPage>
         </UserWrap>
+        )
     );
 };
 export default Profile;

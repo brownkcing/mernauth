@@ -8,10 +8,6 @@ const clientId = "FbqCvqDiQIXMBOoOEbj96Lgvzkfvb1rg";
 const audience = "https://dev-1ylkmsz0.us.auth0.com/api/v2/"
 
 const Auth0ProviderWithHistory = ({ children }) => {
-  const domain1 = process.env.REACT_APP_AUTH0_DOMAIN;
-  const clientId1 = process.env.REACT_APP_AUTH0_CLIENT_ID;
-  const audience1 = process.env.REACT_APP_AUTH0_AUDIENCE;
-
   const history = useHistory();
 
   const onRedirectCallback = (appState) => {
@@ -20,11 +16,11 @@ const Auth0ProviderWithHistory = ({ children }) => {
 
   return (
     <Auth0Provider
-      domain={domain}
-      clientId={clientId}
-      onRedirectCallback={onRedirectCallback}
-      
-      audience={audience}
+      domain="dev-1ylkmsz0.us.auth0.com"
+      clientId="FbqCvqDiQIXMBOoOEbj96Lgvzkfvb1rg"
+      redirectUri={window.location.origin}
+      audience="https://dev-1ylkmsz0.us.auth0.com/api/v2/"
+      scope="read:current_user update:current_user_metadata"
     >
       {children}
     </Auth0Provider>
