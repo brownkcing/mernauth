@@ -13,7 +13,7 @@ const LoginWrap = styled.div`
 const LoginForm = styled(Form)`
     height: 100%;
     width: 75%;
-    padding: 1em 3em;
+    padding: 1em 3.3em;
 `;
 
 const LoginInput = styled.div`
@@ -27,14 +27,14 @@ const LoginTitle = styled.h1`
 
 
 const Forgot = styled.div`
-    margin-bottom: 4em;
+    margin-bottom: 0.5em;
     a {
         text-decoration: none;
         color: #3F98FF;
         :hover {
             color: #90C4FF;
-        }
-    }
+        };
+    };
 `;
 
 const Button = styled(CheckButton)`
@@ -131,7 +131,7 @@ const Login = (props) => {
                 <Forgot>Forgot <a>Password?</a></Forgot>
             </LoginForm>
         </LoginWrap>
-    )
-}
+    );
+};
 
 export default Login;

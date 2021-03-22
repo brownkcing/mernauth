@@ -15,7 +15,7 @@ const Signup = styled.div`
 const SignupForm = styled(Form)`
     height: 100%;
     width: 75%;
-    padding: 1em 3em;
+    padding: 1em 3.3em;
 `;
 
 const InputReg = styled.div`

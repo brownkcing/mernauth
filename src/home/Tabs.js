@@ -24,8 +24,8 @@ const NavTabs = styled.li`
         text-decoration: none;
         :active {
             color:grey;
-        }
-    }
+        };
+    };
 `;
 
 const Linker = styled(NavLink)`
@@ -39,5 +39,5 @@ export default function Tabs() {
             <NavTabs><Linker activeStyle={{boxShadow: "none", backgroundColor:"white"}} to="/signup" >Sign-Up</Linker></NavTabs>
             <NavTabs><Linker activeStyle={{boxShadow: "none", backgroundColor:"white"}} to='/login'>Login</Linker></NavTabs>
         </ListTabs>            
-    )
-}
+    );
+};

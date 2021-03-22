@@ -58,6 +58,6 @@ const Profile = () => {
                 </UserContent>
             </UserPage>
         </UserWrap>
-    )
-}
+    );
+};
 export default Profile;
