@@ -23,12 +23,12 @@ function Auth0js() {
   return (
         <Wrapper>
           <Container>  
-            <loginWithRedirect><button
-      className="btn btn-primary btn-block"
-      onClick={() => loginWithRedirect()}
-    >
-      Log In
-    </button></loginWithRedirect>
+            <loginWithRedirect>
+              <button
+                onClick={() => loginWithRedirect()}
+                >
+                Log In
+              </button></loginWithRedirect>
           </Container>    
         </Wrapper>
   );
