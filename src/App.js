@@ -6,6 +6,7 @@ import RegForms from './home/RegForm';
 import Profile from './home/Profile';
 import {Route, Switch} from 'react-router-dom';
 import './App.css';
+import ProtectedRoute from './home/Auth0/protected-route';
 
 const Wrapper = styled.div`
   display: flex;
@@ -26,6 +27,7 @@ function App() {
           <Container>  
             <Switch>
               <Route exact path="/profile" component={Profile} />
+              <ProtectedRoute path="/profile" component={Profile} />
               <RegForms />
             </Switch>
           </Container>    
