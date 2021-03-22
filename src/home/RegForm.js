@@ -69,7 +69,7 @@ const RegForms = () => {
             </FormContainer>
             </Switch>
         </FormWrapper>
-    )
-}
+    );
+};
 
 export default RegForms;

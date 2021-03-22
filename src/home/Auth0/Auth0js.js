@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import * as Mixins from '../../styles/Mixins';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,21 +16,19 @@ const Container = styled.div`
 
 
 const TextAuth0js = styled.div`
-  width: 100%; 
-  text-align: center; 
-  border-bottom: 1px solid #000; 
-  line-height: 0.1em;
-  margin: 10px 0 20px; 
-  
 `;
 
 function Auth0js() {
+  const { loginWithRedirect } = useAuth0();
   return (
         <Wrapper>
           <Container>  
-            <TextAuth0js><span>OR</span></TextAuth0js>
-
-            
+            <loginWithRedirect><button
+      className="btn btn-primary btn-block"
+      onClick={() => loginWithRedirect()}
+    >
+      Log In
+    </button></loginWithRedirect>
           </Container>    
         </Wrapper>
   );

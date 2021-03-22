@@ -4,7 +4,6 @@ import GlobalStyles from './styles/GlobalStyles';
 import * as Mixins from './styles/Mixins';
 import RegForms from './home/RegForm';
 import Profile from './home/Profile';
-import Auth0js from './home/Auth0/Auth0js';
 import {Route, Switch} from 'react-router-dom';
 import './App.css';
 

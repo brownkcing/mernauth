@@ -176,6 +176,6 @@ const SignUp = (props) => {
           )}   
             </SignupForm>
         </Signup>
-    )
-}
+    );
+};
 export default SignUp;
