@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import * as Mixins from '../../styles/Mixins';
 import { useAuth0 } from "@auth0/auth0-react";
-import AuthenticationButton from './Auth0Button';
+
 
 const Wrapper = styled.div`
   display: flex;
