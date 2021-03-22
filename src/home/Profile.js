@@ -49,7 +49,6 @@ const LoginTitle = styled.h1`
 const Profile = () => {
 
     const { user, isAuthenticated, isLoading } = useAuth0();
-        const { user } = useAuth0();
         const { name, picture, email } = user;
         const userLogged = AuthService.getCurrentUser();
         const logOut = () => {
