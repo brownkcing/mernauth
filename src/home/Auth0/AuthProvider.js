@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
+import Profile from '../Profile';
 
 const domain = "dev-1ylkmsz0.us.auth0.com";
 const clientId = "FbqCvqDiQIXMBOoOEbj96Lgvzkfvb1rg";
@@ -22,6 +23,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
       domain={domain}
       clientId={clientId}
       onRedirectCallback={onRedirectCallback}
+      redirectUri={Profile}
       audience={audience}
     >
       {children}
