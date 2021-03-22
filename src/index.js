@@ -2,21 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { Auth0Provider } from "@auth0/auth0-react";
+import Auth0ProviderWithHistory from './home/Auth0/AuthProvider';
 import { BrowserRouter }from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
-const domain = "dev-1ylkmsz0.us.auth0.com";
-const clientId = "FbqCvqDiQIXMBOoOEbj96Lgvzkfvb1rg";
+
 
 ReactDOM.render(
   <BrowserRouter>
-    <Auth0Provider
-      domain={domain}
-      clientId={clientId}
-    >
+    <Auth0ProviderWithHistory>
       <App />
-    </Auth0Provider>
+    </Auth0ProviderWithHistory>
   </BrowserRouter>,
   document.getElementById("root")
 );
