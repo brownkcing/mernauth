@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import * as Mixins from '../styles/Mixins';
 import AuthService from '../services/auth.service';
@@ -47,7 +47,7 @@ const LoginTitle = styled.h1`
 
 
 const Profile = () => {
-    const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+    const { user, isAuthenticated, getAccessTokenSilently, isLoading } = useAuth0();
     const [userMetadata, setUserMetadata] = useState(null);
         const { name, picture, email } = user;
         const userLogged = AuthService.getCurrentUser();
@@ -56,7 +56,10 @@ const Profile = () => {
           };     
     if (isLoading) {
         return <div>Loading ...</div>;
-      };
+      }
+      else {
+          
+      } 
 
       useEffect(() => {
         const getUserMetadata = async () => {
