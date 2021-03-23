@@ -45,16 +45,38 @@ const LoginTitle = styled.h1`
 `;
 
 const Profile = () => {
-    const { user } = useAuth0();
+    const { user, isAuthenticated } = useAuth0();
     const { name } = user;
     const userLogged = AuthService.getCurrentUser();
+
+    const notAuth = !isAuthenticated;
+    const auth = isAuthenticated;
+
+    let Authenticated;
+    let authOAuthenticated;
+
+    if(userLogged !== null && auth) {
+        Authenticated = <LoginTitle>Welcome {userLogged.username}</LoginTitle>;
+    }
+    else if (userLogged !== null && notAuth) {
+        Authenticated = <LoginTitle>Welcome {userLogged.username}</LoginTitle>
+    }
+    else if (userLogged === null && auth) {
+        Authenticated = <LoginTitle>Welcome {name}</LoginTitle>
+    }
+    else if (userLogged === null && notAuth) {
+        Authenticated = <LoginTitle>Welcome not authenitcated</LoginTitle>
+    }
+    
+
+    
+    
     const logOut = () => {
         AuthService.logout();
         };
     return (
         <UserWrap>
-            {userLogged === null ?  <LoginTitle>Welcome test</LoginTitle> : <LoginTitle>Welcome {userLogged.username}</LoginTitle> }
-            
+                {Authenticated}
             <UserPage>
                 <UserContent>
                    {/* <UserLabel><label>This is {userLogged.username} {name} authenticated personal page.</label></UserLabel>  */}
