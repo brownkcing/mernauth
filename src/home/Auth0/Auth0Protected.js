@@ -8,10 +8,7 @@ const userLogged = AuthService.getCurrentUser();
 const ProtectedRoute = ({ component, ...args }) => (
   <React.Fragment>
     {userLogged != null ? 
-      <Route
-        component
-        {...args}
-      /> 
+      <Route/> 
     : 
       <Route
         component={withAuthenticationRequired(component)}
