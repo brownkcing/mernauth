@@ -53,10 +53,10 @@ const Profile = () => {
         };
     return (
         <UserWrap>
-            <LoginTitle>Welcome {name}</LoginTitle>
+            <LoginTitle>Welcome {userLogged.username} {name}</LoginTitle>
             <UserPage>
                 <UserContent>
-                   <UserLabel><label>This is {name} authenticated personal page.</label></UserLabel> 
+                   <UserLabel><label>This is {userLogged.username} {name} authenticated personal page.</label></UserLabel> 
                    <UserLabel><span>Click to</span> <a href="/login" onClick={logOut}>logout</a> <span>and return back to previous page</span></UserLabel>  
                    <div>{JSON.stringify(user, null, 2)}</div>
                 </UserContent>
