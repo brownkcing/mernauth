@@ -53,7 +53,7 @@ const Profile = () => {
         };
     return (
         <UserWrap>
-            {userLogged.username === null ?  <LoginTitle>Welcome test</LoginTitle> : <LoginTitle>Welcome {userLogged.username}</LoginTitle> }
+            {userLogged === null ?  <LoginTitle>Welcome test</LoginTitle> : <LoginTitle>Welcome {userLogged.username}</LoginTitle> }
             
             <UserPage>
                 <UserContent>
