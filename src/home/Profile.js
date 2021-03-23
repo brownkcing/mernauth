@@ -53,10 +53,16 @@ const Profile = () => {
         };
     return (
         <UserWrap>
-            {userLogged.username == null ? <LoginTitle>Welcome {name}</LoginTitle> : <LoginTitle>Welcome {userLogged.username}</LoginTitle>}
+            {userLogged.username == 'null' ? (
+                <LoginTitle>Welcome {name}</LoginTitle>) : (
+                <LoginTitle>Welcome {userLogged.username}</LoginTitle>    
+            )}
             <UserPage>
                 <UserContent>
-                {userLogged.username == null ? <UserLabel><label>This is {name} authenticated personal page.</label></UserLabel> : <UserLabel><label>This is {userLogged.username}authenticated personal page.</label></UserLabel>}
+                    {userLogged.username == 'null' ? (
+                        <UserLabel><label>This is {name} authenticated personal page.</label></UserLabel>) : (
+                        <UserLabel><label>This is {userLogged.username} authenticated personal page.</label></UserLabel>   
+                    )}
                    <UserLabel><span>Click to</span> <a href="/login" onClick={logOut}>logout</a> <span>and return back to previous page</span></UserLabel>  
                 </UserContent>
             </UserPage>
