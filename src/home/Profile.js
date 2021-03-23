@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useAuth0 } from "@auth0/auth0-react";
 import * as Mixins from '../styles/Mixins';
 import AuthService from '../services/auth.service';
 
@@ -44,17 +45,21 @@ const LoginTitle = styled.h1`
 `;
 
 const Profile = () => {
-        const userLogged = AuthService.getCurrentUser();
-        const logOut = () => {
-            AuthService.logout();
-          };
+    const { user } = useAuth0();
+    const { name, picture, email } = user;
+    const userLogged = AuthService.getCurrentUser();
+    const { username } = userLogged;
+    const logOut = () => {
+        AuthService.logout();
+        };
     return (
         <UserWrap>
-            <LoginTitle>Welcome {userLogged.username}</LoginTitle>
+            <LoginTitle>Welcome {username || name}</LoginTitle>
             <UserPage>
                 <UserContent>
-                   <UserLabel><label>This is {userLogged.username} authenticated personal page.</label></UserLabel> 
+                   <UserLabel><label>This is {username || name} authenticated personal page.</label></UserLabel> 
                    <UserLabel><span>Click to</span> <a href="/login" onClick={logOut}>logout</a> <span>and return back to previous page</span></UserLabel>  
+                   <div>{JSON.stringify(user, null, 2)}</div>
                 </UserContent>
             </UserPage>
         </UserWrap>

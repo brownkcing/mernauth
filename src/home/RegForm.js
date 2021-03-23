@@ -2,12 +2,15 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import * as Mixins from '../styles/Mixins';
 import {Switch, Route, Redirect} from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 import SignUp from './SignUp';
 import Login from './Login';
-import Auth0js from './Auth0/Auth0js';
 import Tabs from './Tabs';
 import AuthService from '../services/auth.service';
-
+import AuthenticationButton from './Auth0/Auth0AuthButton';
+import ProtectedRoute from './Auth0/Auth0Protected';
+import Profile from './Profile';
+import ExternalApi from './Auth0/external-api';
 
 
 const FormWrapper = styled.div`
@@ -47,13 +50,14 @@ const TextAuth0js = styled.div`
 
 const RegForms = () => {
     const [currentUser, setCurrentUser] = useState(undefined);
+    const { isLoading } = useAuth0();
     useEffect(() => {
         const user = AuthService.getCurrentUser();
         if (user) {
           setCurrentUser(user);
         }
       }, []);
-    
+
     return (
         <FormWrapper>
             <Tabs />
@@ -64,10 +68,12 @@ const RegForms = () => {
                     <Redirect to="/signup"/>
                 </Route>
                 <Route exact path="/login" component={Login}  />
+                <ProtectedRoute  exact path="/profile" component={Profile} />
+                <ProtectedRoute path="/external-api" component={ExternalApi} />
                 <TextAuth0js><span>OR</span></TextAuth0js>
-                <Auth0js />
             </FormContainer>
             </Switch>
+            <AuthenticationButton />
         </FormWrapper>
     );
 };
