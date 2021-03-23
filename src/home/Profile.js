@@ -46,19 +46,18 @@ const LoginTitle = styled.h1`
 
 const Profile = () => {
     const { user } = useAuth0();
-    const { name, picture, email } = user;
+    const { name } = user;
     const userLogged = AuthService.getCurrentUser();
     const logOut = () => {
         AuthService.logout();
         };
     return (
         <UserWrap>
-            <LoginTitle>Welcome {userLogged.username} {name}</LoginTitle>
+            {userLogged.username == null ? <LoginTitle>Welcome {name}</LoginTitle> : <LoginTitle>Welcome {userLogged.username}</LoginTitle>}
             <UserPage>
                 <UserContent>
-                   <UserLabel><label>This is {userLogged.username} {name} authenticated personal page.</label></UserLabel> 
+                {userLogged.username == null ? <UserLabel><label>This is {name} authenticated personal page.</label></UserLabel> : <UserLabel><label>This is {userLogged.username}authenticated personal page.</label></UserLabel>}
                    <UserLabel><span>Click to</span> <a href="/login" onClick={logOut}>logout</a> <span>and return back to previous page</span></UserLabel>  
-                   <div>{JSON.stringify(user, null, 2)}</div>
                 </UserContent>
             </UserPage>
         </UserWrap>
