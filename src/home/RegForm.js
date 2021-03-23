@@ -7,7 +7,7 @@ import SignUp from './SignUp';
 import Login from './Login';
 import Tabs from './Tabs';
 import AuthService from '../services/auth.service';
-import AuthenticationButton from './Auth0/Auth0AuthButton';
+import LoginButton from './Auth0/Auth0Login';
 import ProtectedRoute from './Auth0/Auth0Protected';
 import Profile from './Profile';
 import ExternalApi from './Auth0/external-api';
@@ -73,7 +73,7 @@ const RegForms = () => {
                 <TextAuth0js><span>OR</span></TextAuth0js>
             </FormContainer>
             </Switch>
-            <AuthenticationButton />
+            <LoginButton />
         </FormWrapper>
     );
 };
