@@ -48,8 +48,6 @@ const Profile = () => {
     const { user, isAuthenticated } = useAuth0();
     const { name } = user;
     const userLogged = AuthService.getCurrentUser();
-
-    const notAuth = !isAuthenticated;
     const auth = isAuthenticated;
 
     let Authenticated;
@@ -67,6 +65,7 @@ const Profile = () => {
     return (
         <UserWrap>
                 {Authenticated}
+                {auth ? <div> is authenticated</div> : <div> is not authenticated</div>}
             <UserPage>
                 <UserContent>
                    {/* <UserLabel><label>This is {userLogged.username} {name} authenticated personal page.</label></UserLabel>  */}
