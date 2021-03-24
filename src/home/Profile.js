@@ -53,23 +53,13 @@ const Profile = () => {
     const auth = isAuthenticated;
 
     let Authenticated;
-    let authOAuthenticated;
 
-    if(userLogged !== null && auth) {
+    if(userLogged !== null) {
         Authenticated = <LoginTitle>Welcome {userLogged.username}</LoginTitle>;
     }
-    else if (userLogged !== null && notAuth) {
-        Authenticated = <LoginTitle>Welcome {userLogged.username}</LoginTitle>
+    else {
+        Authenticated = <LoginTitle>Welcome {name}</LoginTitle>;
     }
-    else if (userLogged === null && auth) {
-        Authenticated = <LoginTitle>Welcome {name}</LoginTitle>
-    }
-    else if (userLogged === null && notAuth) {
-        Authenticated = <LoginTitle>Welcome not authenitcated</LoginTitle>
-    }
-    
-
-    
     
     const logOut = () => {
         AuthService.logout();
