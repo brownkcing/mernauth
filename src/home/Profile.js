@@ -52,10 +52,10 @@ const Profile = () => {
 
     let Authenticated;
 
-    if(userLogged !== null) {
+    if(userLogged !== null && !isAuthenticated) {
         Authenticated = <LoginTitle>Welcome {userLogged.username}</LoginTitle>;
     }
-    else {
+    else if (userLogged === null && isAuthenticated) {
         Authenticated = <LoginTitle>Welcome {name}</LoginTitle>;
     }
     
