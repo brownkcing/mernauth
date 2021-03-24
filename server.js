@@ -36,6 +36,10 @@ db.mongoose
     process.exit();
   });
 
+  app.get('/test/user/messages', function (req, res) {
+    res.send('hello world')
+  })
+
   require("./server/routes/auth.routes.js")(app);
   require("./server/routes/user.routes.js")(app);
 
