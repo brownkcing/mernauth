@@ -9,7 +9,7 @@ import Tabs from './Tabs';
 import AuthService from '../services/auth.service';
 import LoginButton from './Auth0/Auth0Login';
 import ProtectedRoute from './Auth0/Auth0Protected';
-import Profile from './Profile';
+
 import ExternalApi from './Auth0/external-api';
 
 
@@ -68,7 +68,7 @@ const RegForms = () => {
                     <Redirect to="/signup"/>
                 </Route>
                 <Route exact path="/login" component={Login}  />
-                <ProtectedRoute  exact path="/profile" component={Profile} />
+              
                 <ProtectedRoute path="/external-api" component={ExternalApi} />
                 <TextAuth0js><span>OR</span></TextAuth0js>
             </FormContainer>

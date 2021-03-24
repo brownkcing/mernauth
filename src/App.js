@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import * as Mixins from './styles/Mixins';
 import RegForms from './home/RegForm';
-
+import Profile from './home/Profile';
 import {Route, Switch} from 'react-router-dom';
 import './App.css';
 
@@ -25,7 +25,7 @@ function App() {
         <Wrapper>
           <Container>  
             <Switch>
-            
+            <ProtectedRoute  exact path="/profile" component={Profile} />
               <RegForms />
             </Switch>
           </Container>    
