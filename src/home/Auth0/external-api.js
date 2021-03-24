@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import authHeader from "../../services/auth-header";
 
 const ExternalApi = () => {
   const [message, setMessage] = useState("");
@@ -24,10 +25,10 @@ const ExternalApi = () => {
       const token = await getAccessTokenSilently();
 
       const response = await fetch(
-        `${serverUrl}/api/messages/protected-message`,
+        `${serverUrl}/api/protected-message`,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: authHeader(),
           },
         }
       );
