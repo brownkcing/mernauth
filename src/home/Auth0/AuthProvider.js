@@ -9,9 +9,9 @@ const Auth0ProviderWithHistory = ({ children }) => {
   const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 
  
-  // const onRedirectCallback = (appState) => {
-  //   history.push(appState?.returnTo || window.location.pathname);
-  // };
+  const onRedirectCallback = (appState) => {
+    history.push(appState?.returnTo || window.location.pathname);
+  };
 
   return (
     <Auth0Provider
