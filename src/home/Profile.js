@@ -46,9 +46,9 @@ const LoginTitle = styled.h1`
 
 const Profile = () => {
     const { user, isAuthenticated } = useAuth0();
-    const { name, picture, email } = user;
+    const { name } = user;
     const userLogged = AuthService.getCurrentUser();
-    const auth  = isAuthenticated;
+    const { auth } = isAuthenticated;
 
     let Authenticated;
 

@@ -26,7 +26,7 @@ function App() {
         <Wrapper>
           <Container>  
             <Switch>
-            <Route  exact path="/profile" component={Profile} />
+            <ProtectedRoute  exact path="/profile" component={Profile} />
               <RegForms />
             </Switch>
           </Container>    
