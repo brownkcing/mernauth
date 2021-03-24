@@ -50,21 +50,21 @@ const Profile = () => {
     const userLogged = AuthService.getCurrentUser();
 
 
-    let Authenticated;
+    // let Authenticated;
 
-    if(userLogged !== null && !isAuthenticated) {
-        Authenticated = <LoginTitle>Welcome {userLogged.username}</LoginTitle>;
-    }
-    else if (userLogged === null && isAuthenticated) {
-        Authenticated = <LoginTitle>Welcome {name}</LoginTitle>;
-    }
+    // if(userLogged !== null && !isAuthenticated) {
+    //     Authenticated = <LoginTitle>Welcome {userLogged.username}</LoginTitle>;
+    // }
+    // else if (userLogged === null && isAuthenticated) {
+    //     Authenticated = <LoginTitle>Welcome {name}</LoginTitle>;
+    // };
     
     const logOut = () => {
         AuthService.logout();
         };
     return (
         <UserWrap>
-                {Authenticated}
+                <LoginTitle>Welcome {userLogged.username}</LoginTitle>;
                 {isAuthenticated ? <div> is authenticated</div> : <div> is not authenticated</div>}
             <UserPage>
                 <UserContent>
