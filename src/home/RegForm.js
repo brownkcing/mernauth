@@ -69,7 +69,7 @@ const RegForms = () => {
                 </Route>
                 <Route exact path="/login" component={Login}  />
               
-                {/* <ProtectedRoute path="/external-api" component={ExternalApi} /> */}
+                <ProtectedRoute path="/external-api" component={ExternalApi} />
                 <TextAuth0js><span>OR</span></TextAuth0js>
             </FormContainer>
             </Switch>
