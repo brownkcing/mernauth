@@ -4,7 +4,6 @@ import * as Mixins from '../styles/Mixins';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './Login';
-import Auth0js from './Auth0/Auth0js';
 import Tabs from './Tabs';
 import AuthService from '../services/auth.service';
 
