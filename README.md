@@ -8,5 +8,5 @@
 </h1>
 
 <p align="justify">
-  A test of mern auth with Netlify Function
+  A test of mern auth with Netlify Function. Live site @ https://mernauthfrontend.netlify.app/
 </p>
