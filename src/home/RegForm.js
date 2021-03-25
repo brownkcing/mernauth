@@ -64,8 +64,6 @@ const RegForms = () => {
                     <Redirect to="/signup"/>
                 </Route>
                 <Route exact path="/login" component={Login}  />
-                <TextAuth0js><span>OR</span></TextAuth0js>
-                <Auth0js />
             </FormContainer>
             </Switch>
         </FormWrapper>
